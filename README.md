@@ -27,21 +27,21 @@ This protocol has been developed solely for educational purposes.
 
 ## Response Codes
 1. **Success (OK):**
-   - Code: `000`
+   - Code: `100`
    - Description: The request was successfully processed.
 
 2. **Error (ERROR):**
-   - Code: `010`
+   - Code: `200`
    - Description: General error in the request or processing.
 
 3. **Unknown Command (UNKNOWN COMMAND):**
-   - Code: `020`
+   - Code: `201`
    - Description: The command specified in the request is not recognized.
 
 4. **Invalid Parameters (INVALID PARAMETERS):**
-   - Code: `030`
+   - Code: `202`
    - Description: One or more parameters in the request have an incorrect format or value.
 
 5. **Server Busy (SERVER BUSY):**
-   - Code: `040`
+   - Code: `300`
    - Description: The server is temporarily busy and cannot process the request at the moment.
