@@ -21,7 +21,7 @@ impl Server {
     }
 
     pub fn start(&self) {
-        let listener = TcpListener::bind(("127.0.0.1", self.port))
+        let listener = TcpListener::bind(("0.0.0.0", self.port))
             .expect("Failed to bind port");
 
         println!("Server listening on port {}", self.port);
