@@ -44,12 +44,20 @@ impl Server {
 
 fn handle_client(mut stream: TcpStream, current_connections: Arc<Mutex<usize>>) {
     let mut buffer = [0; 1024];
-    let _ = stream.read(&mut buffer);
+    let mut bytes_read = 0;
+
+    bytes_read = match stream.read(&mut buffer) {
+        Ok(bytes) => bytes,
+        Err(_) => {
+            println!("Error reading from stream");
+            return;
+        }
+    };
 
     let client_address = stream.peer_addr().unwrap();
     println!("Handling client: {}", client_address);
 
-    let request = String::from_utf8_lossy(&buffer[..]);
+    let request = String::from_utf8_lossy(&buffer[..bytes_read]);
     println!("Received request from client {}: {}", client_address, request);
 
     let response = process_request(&request[..]);
