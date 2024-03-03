@@ -25,6 +25,20 @@ This protocol has been developed solely for educational purposes.
       - `word2`: The second word.
    - Description: Сompares these words and returns "true" if they are identical in terms of both the number of letters and their order, and "false" otherwise.
 
+**Addition (PLUS):**
+- Command: `PLUS num1 num2`
+- Parameters:
+   - `num1`: The first number.
+   - `num2`: The second number.
+- Description: Performs addition of the two numbers and returns the result.
+
+**Subtraction (MINUS):**
+- Command: `MINUS num1 num2`
+- Parameters:
+   - `num1`: The first number (minuend).
+   - `num2`: The second number (subtrahend).
+- Description: Performs subtraction of the second number from the first number and returns the result.
+
 ## Response Codes
 1. **Success (OK):**
    - Code: `100`
